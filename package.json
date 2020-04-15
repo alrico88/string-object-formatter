@@ -1,0 +1,17 @@
+{
+  "name": "string-object-formatter",
+  "version": "1.0.0",
+  "description": "Python inspired named template formatter for Javascript strings",
+  "main": "index.js",
+  "repository": "https://github.com/alrico88/string-object-formatter",
+  "author": "Alberto Rico",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.4",
+    "jest": "^25.3.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "prepublish": "yarn test"
+  }
+}
