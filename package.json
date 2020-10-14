@@ -1,6 +1,6 @@
 {
   "name": "string-object-formatter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Python inspired named template formatter for Javascript strings",
   "main": "index.js",
   "repository": "https://github.com/alrico88/string-object-formatter",
@@ -16,5 +16,6 @@
     "test": "jest",
     "prepublish": "yarn test",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
-  }
+  },
+  "keywords": ["strings", "format", "object", "python"]
 }
