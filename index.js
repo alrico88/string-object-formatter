@@ -6,7 +6,8 @@
 class Formatter {
 
   /**
-   *Creates an instance of Formatter.
+   * Creates an instance of Formatter.
+   *
    * @param {string} [startDelimiter='{']
    * @param {string} [endDelimiter='}']
    * @memberof Formatter
