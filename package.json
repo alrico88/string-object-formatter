@@ -1,6 +1,6 @@
 {
   "name": "string-object-formatter",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Python inspired named template formatter for Javascript strings",
   "main": "dist/index.js",
   "module": "dist/string-object-formatter.esm.js",
