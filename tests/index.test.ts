@@ -1,4 +1,4 @@
-const Formatter = require('../index');
+import Formatter from '../src';
 
 const textToFormatDefault = 'This {a} should {b} {c}';
 const textToFormatCustom = 'This {{a}} should {{b}} {{c}}';
@@ -36,14 +36,5 @@ describe('Test error cases', () => {
         unexistingExpression: 'Hello',
       });
     }).not.toThrow();
-  });
-
-  test('Passing anything different than a string to the format function should throw Error', () => {
-    const formatter = new Formatter();
-    expect(() => {
-      formatter.format(new Date(), {
-        a: 'b',
-      });
-    }).toThrow();
   });
 });

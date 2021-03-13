@@ -4,73 +4,117 @@ Inspired by python named formatter function, replace text inside a string based 
 
 ### Example usage
 
+#### Import it in your code
+
+In a CommonJS environment
+
+```javascript
+const Formatter = require('string-object-formatter');
+```
+
+Using `import`
+
+```javascript
+import Formatter from 'string-object-formatter';
+```
+
 #### Default delimiters
 
-```
-const Formatter = require('string-object-formatter');
-const formatter = new Formatter();
+```javascript
+const formatter = new Formatter(#);
 const toFormat = 'My name is {firstName} {lastName}';
-const formatted = formatter.format(toFormat, {firstName: 'John', lastName: 'Doe'});
+const formatted = formatter.format(toFormat, {
+  firstName: 'John',
+  lastName: 'Doe',
+});
 
 // formatted is 'My name is John Doe'
 ```
 
 #### Custom delimiters
 
-```
-const Formatter = require('string-object-formatter');
+```javascript
 const formatter = new Formatter('{{', '}}');
 const toFormat = 'My name is {{firstName}} {{lastName}}';
-const formatted = formatter.format(toFormat, {firstName: 'John', lastName: 'Doe'});
+const formatted = formatter.format(toFormat, {
+  firstName: 'John',
+  lastName: 'Doe',
+});
 
 // formatted is 'My name is John Doe'
 ```
 
-<a name="Formatter"></a>
+## Table of contents
 
-## Formatter
+### Constructors
 
-**Kind**: global class
+- [constructor](#constructor)
 
-- [Formatter](#Formatter)
-  - [new Formatter()](#new_Formatter_new)
-  - _instance_
-    - [.format(stringToFormat, formatItems)](#Formatter+format) ⇒ <code>string</code>
-  - _static_
-    - [.Formatter](#Formatter.Formatter)
-      - [new Formatter([startDelimiter], [endDelimiter])](#new_Formatter.Formatter_new)
+### Properties
 
-<a name="new_Formatter_new"></a>
+- [endDelimiter](#enddelimiter)
+- [startDelimiter](#startdelimiter)
 
-### new Formatter()
+### Methods
 
-Formatter Class
+- [format](#format)
 
-<a name="Formatter+format"></a>
+## Constructors
 
-### formatter.format(stringToFormat, formatItems) ⇒ <code>string</code>
+### constructor
 
-Formats string according to object
-
-**Kind**: instance method of [<code>Formatter</code>](#Formatter)
-
-| Param          | Type                | Description                                                                       |
-| -------------- | ------------------- | --------------------------------------------------------------------------------- |
-| stringToFormat | <code>string</code> |                                                                                   |
-| formatItems    | <code>object</code> | Ex.: {'toReplace': 'replaced'} turns 'example\_{toReplace}' to 'example_replaced' |
-
-<a name="Formatter.Formatter"></a>
-
-### Formatter.Formatter
-
-**Kind**: static class of [<code>Formatter</code>](#Formatter)  
-<a name="new_Formatter.Formatter_new"></a>
-
-#### new Formatter([startDelimiter], [endDelimiter])
+\+ **new default**(`startDelimiter?`: _string_, `endDelimiter?`: _string_): [_default_](#)
 
 Creates an instance of Formatter.
 
-| Param            | Type                | Default                                |
-| ---------------- | ------------------- | -------------------------------------- |
-| [startDelimiter] | <code>string</code> | <code>&quot;&#x27;{&#x27;&quot;</code> |
-| [endDelimiter]   | <code>string</code> | <code>&quot;&#x27;}&#x27;&quot;</code> |
+**`memberof`** Formatter
+
+#### Parameters:
+
+| Name             | Type     | Default value |
+| :--------------- | :------- | :------------ |
+| `startDelimiter` | _string_ | '{'           |
+| `endDelimiter`   | _string_ | '}'           |
+
+**Returns:** [_default_](#)
+
+Defined in: index.ts:12
+
+## Properties
+
+### endDelimiter
+
+• **endDelimiter**: _string_
+
+Defined in: index.ts:12
+
+---
+
+### startDelimiter
+
+• **startDelimiter**: _string_
+
+Defined in: index.ts:11
+
+## Methods
+
+### format
+
+▸ **format**(`stringToFormat`: _string_, `formatItems`: FormatObject): _string_
+
+Formats string according to object
+
+**`memberof`** Formatter
+
+#### Parameters:
+
+| Name             | Type         | Description                                                                       |
+| :--------------- | :----------- | :-------------------------------------------------------------------------------- |
+| `stringToFormat` | _string_     | The string to format                                                              |
+| `formatItems`    | FormatObject | Ex.: {'toReplace': 'replaced'} turns 'example\_{toReplace}' to 'example_replaced' |
+
+**Returns:** _string_
+
+The replaced string
+
+Defined in: index.ts:36
