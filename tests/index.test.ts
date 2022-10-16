@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest';
 import Formatter from '../src';
 
 const textToFormatDefault = 'This {a} should {b} {c}';
