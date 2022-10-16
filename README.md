@@ -21,7 +21,7 @@ import Formatter from 'string-object-formatter';
 #### Default delimiters
 
 ```javascript
-const formatter = new Formatter(#);
+const formatter = new Formatter();
 const toFormat = 'My name is {firstName} {lastName}';
 const formatted = formatter.format(toFormat, {
   firstName: 'John',
@@ -52,6 +52,7 @@ const formatted = formatter.format(toFormat, {
 
 ### Properties
 
+- [silent](#silent)
 - [endDelimiter](#enddelimiter)
 - [startDelimiter](#startdelimiter)
 
@@ -63,7 +64,7 @@ const formatted = formatter.format(toFormat, {
 
 ### constructor
 
-\+ **new default**(`startDelimiter?`: _string_, `endDelimiter?`: _string_): [_default_](#)
+\+ **new default**(`startDelimiter?`: _string_, `endDelimiter?`: _string_, `silent`: _boolean_): [_default_](#)
 
 Creates an instance of Formatter.
 
@@ -71,30 +72,31 @@ Creates an instance of Formatter.
 
 #### Parameters:
 
-| Name             | Type     | Default value |
-| :--------------- | :------- | :------------ |
-| `startDelimiter` | _string_ | '{'           |
-| `endDelimiter`   | _string_ | '}'           |
+| Name             | Type      | Default value |
+| :--------------- | :-------- | :------------ |
+| `startDelimiter` | _string_  | '{'           |
+| `endDelimiter`   | _string_  | '}'           |
+| `silent`         | _boolean_ | false         |
 
 **Returns:** [_default_](#)
 
-Defined in: index.ts:12
-
 ## Properties
+
+### silent
+
+• **silent**: _boolean_
+
+---
 
 ### endDelimiter
 
 • **endDelimiter**: _string_
-
-Defined in: index.ts:12
 
 ---
 
 ### startDelimiter
 
 • **startDelimiter**: _string_
-
-Defined in: index.ts:11
 
 ## Methods
 
@@ -116,5 +118,3 @@ Formats string according to object
 **Returns:** _string_
 
 The replaced string
-
-Defined in: index.ts:36
