@@ -1,6 +1,6 @@
 {
   "name": "string-object-formatter",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Python inspired named template formatter for Javascript strings",
   "type": "module",
   "exports": {
