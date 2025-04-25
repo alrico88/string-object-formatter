@@ -94,7 +94,7 @@ Creates an instance of Formatter.
 
 ### format
 
-▸ **format**(`stringToFormat`: _string_, `formatItems`: FormatObject): _string_
+▸ **format**(`stringToFormat`: _string_, `formatItems`: _Record<string, string | number>_): _string_
 
 Formats string according to object
 
@@ -102,10 +102,10 @@ Formats string according to object
 
 #### Parameters:
 
-| Name             | Type         | Description                                                                       |
-| :--------------- | :----------- | :-------------------------------------------------------------------------------- |
-| `stringToFormat` | _string_     | The string to format                                                              |
-| `formatItems`    | FormatObject | Ex.: {'toReplace': 'replaced'} turns 'example\_{toReplace}' to 'example_replaced' |
+| Name             | Type                    | Description          |
+| :--------------- | :---------------------- | :------------------- | --------------------------------------------------------------------------------- |
+| `stringToFormat` | _string_                | The string to format |
+| `formatItems`    | \_Record<string, string | number>\_            | Ex.: {'toReplace': 'replaced'} turns 'example\_{toReplace}' to 'example_replaced' |
 
 **Returns:** _string_
 

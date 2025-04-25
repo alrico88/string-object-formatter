@@ -1,7 +1,3 @@
-interface FormatObject {
-  [name: string]: string | number;
-}
-
 /**
  * Formatter class
  * @export
@@ -42,7 +38,7 @@ export default class Formatter {
    *
    * @public
    * @param {string} stringToFormat The string to format
-   * @param {object} formatItems Object to define replace values
+   * @param {Record<string, string | number>} formatItems Object to define replace values
    * @example
    * const formatter = new Formatter();
    * formatter.format('example_{toReplace}', {'toReplace': 'replaced'})
@@ -50,7 +46,10 @@ export default class Formatter {
    * @returns {string} The replaced string
    * @memberof Formatter
    */
-  public format(stringToFormat: string, formatItems: FormatObject): string {
+  public format(
+    stringToFormat: string,
+    formatItems: Record<string, string | number>,
+  ): string {
     let str = `${stringToFormat}`;
 
     for (const [prop, value] of Object.entries(formatItems)) {
