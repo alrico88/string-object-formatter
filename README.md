@@ -9,23 +9,23 @@ Inspired by python named formatter function, replace text inside a string based 
 In a CommonJS environment
 
 ```javascript
-const Formatter = require('string-object-formatter');
+const Formatter = require("string-object-formatter");
 ```
 
 Using `import`
 
 ```javascript
-import Formatter from 'string-object-formatter';
+import Formatter from "string-object-formatter";
 ```
 
 #### Default delimiters
 
 ```javascript
 const formatter = new Formatter();
-const toFormat = 'My name is {firstName} {lastName}';
+const toFormat = "My name is {firstName} {lastName}";
 const formatted = formatter.format(toFormat, {
-  firstName: 'John',
-  lastName: 'Doe',
+  firstName: "John",
+  lastName: "Doe",
 });
 
 // formatted is 'My name is John Doe'
@@ -34,11 +34,11 @@ const formatted = formatter.format(toFormat, {
 #### Custom delimiters
 
 ```javascript
-const formatter = new Formatter('{{', '}}');
-const toFormat = 'My name is {{firstName}} {{lastName}}';
+const formatter = new Formatter("{{", "}}");
+const toFormat = "My name is {{firstName}} {{lastName}}";
 const formatted = formatter.format(toFormat, {
-  firstName: 'John',
-  lastName: 'Doe',
+  firstName: "John",
+  lastName: "Doe",
 });
 
 // formatted is 'My name is John Doe'
@@ -52,7 +52,6 @@ const formatted = formatter.format(toFormat, {
 
 ### Properties
 
-- [silent](#silent)
 - [endDelimiter](#enddelimiter)
 - [startDelimiter](#startdelimiter)
 
@@ -72,21 +71,14 @@ Creates an instance of Formatter.
 
 #### Parameters:
 
-| Name             | Type      | Default value |
-| :--------------- | :-------- | :------------ |
-| `startDelimiter` | _string_  | '{'           |
-| `endDelimiter`   | _string_  | '}'           |
-| `silent`         | _boolean_ | false         |
+| Name             | Type     | Default value |
+| :--------------- | :------- | :------------ |
+| `startDelimiter` | _string_ | '{'           |
+| `endDelimiter`   | _string_ | '}'           |
 
 **Returns:** [_default_](#)
 
 ## Properties
-
-### silent
-
-• **silent**: _boolean_
-
----
 
 ### endDelimiter
 
