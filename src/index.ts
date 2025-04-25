@@ -12,21 +12,17 @@ export default class Formatter {
 
   public endDelimiter: string;
 
-  public silent: boolean;
-
   /**
    * Creates an instance of Formatter.
    *
    * @public
    * @param {string} [startDelimiter='{'] String to use as starting delimiter for element to replace
    * @param {string} [endDelimiter='}'] String to use as ending delimiter for element to replace
-   * @param {boolean} [silent=false] Whether not to log not found expressions to console
    * @memberof Formatter
    */
-  public constructor(startDelimiter = '{', endDelimiter = '}', silent = false) {
+  public constructor(startDelimiter = "{", endDelimiter = "}", silent = false) {
     this.startDelimiter = startDelimiter;
     this.endDelimiter = endDelimiter;
-    this.silent = silent;
   }
 
   /**
@@ -57,17 +53,13 @@ export default class Formatter {
   public format(stringToFormat: string, formatItems: FormatObject): string {
     let str = `${stringToFormat}`;
 
-    Object.entries(formatItems).forEach(([prop, value]) => {
-      const valueToReplaceWith = typeof value === 'number' ? value.toString() : value;
+    for (const [prop, value] of Object.entries(formatItems)) {
       const lookUp = this.getLookUpStr(prop);
       const hasExpression = str.includes(lookUp);
       if (hasExpression) {
-        str = str.replace(new RegExp(lookUp, 'gi'), valueToReplaceWith);
-      } else if (!hasExpression && !this.silent) {
-        // eslint-disable-next-line no-console
-        console.log('Expression not found', prop);
+        str = str.replace(new RegExp(lookUp, "gi"), `${value}`);
       }
-    });
+    }
 
     return str;
   }
