@@ -17,7 +17,7 @@ jobs:
           version: ${{ matrix.node }}
       - uses: actions/setup-node@v2
         with:
-          node-version: "22"
+          node-version: "10"
           cache: "pnpm"
       - run: pnpm install
       - run: pnpm coverage
